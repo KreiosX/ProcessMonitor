@@ -15,6 +15,7 @@ namespace UtilityMonitor
     /// </summary>
     public partial class MainWindow : Window
     {
+
         List<string> listProcess = new List<string>();
         public MainWindow()
         {
@@ -110,6 +111,14 @@ namespace UtilityMonitor
             else
             {
                 MessageBox.Show("Please provide correct input.","Warning",MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Q)
+            {
+                Application.Current.Shutdown();
             }
         }
     }
